@@ -1,6 +1,10 @@
 # CarsServiceLog – Entwicklerhandbuch
 
-CarsServiceLog ist eine React/Vite-PWA, die Haushalten in Deutschland hilft, Fahrzeugakten, Servicehistorien und HU/AU-Intervalle lokal zu verwalten. Diese README ist speziell darauf ausgelegt, dass du (oder ein zukünftiger Codex-Agent) jederzeit einsteigen, Tests laufen lassen, Features erweitern und das Design konsistent halten kannst.
+CarsServiceLog bietet Haushalten eine zentrale App zum lokalen Verwalten von Fahrzeugakten, Serviceterminen und Prüfintervallen (HU/AU, Ölwechsel etc.). Die Anwendung erfasst Stammdaten, Kilometerstände, Werkstattinfos und individuelle Notizen pro Fahrzeug und visualisiert sie in klar gegliederten Panels, die auf Desktop, Tablet und Mobilgeräten identisch funktionieren. Dank PWA-Unterstützung funktioniert alles auch offline: Daten werden im Browser gespeichert, können als JSON gesichert oder wiederhergestellt werden und bleiben damit vollständig unter der Kontrolle der Nutzer.
+
+Wesentliche Funktionen sind Servicehistorien inklusive Kostenaufstellung, frei definierbare Intervalle mit Statusampel (OK, bald fällig, überfällig), Filter- und Suchoptionen, eine Backup-Ansicht sowie Hilfeseiten für Workflows. Das Dashboard liefert auf einen Blick anstehende Prüfungen und kumulierte Wartungskosten, während Detailseiten pro Fahrzeug spezifische Einträge, Notizen und Intervalle bündeln. Dadurch lässt sich etwa nachvollziehen, wann zuletzt der Zahnriemen gewechselt wurde, welche Werkstatt was berechnet hat oder welche HU/AU demnächst erledigt werden muss.
+
+Das Ziel ist eine zuverlässige, private und intuitiv bedienbare Dokumentation der Fahrzeugpflege in Familien und Fuhrparks ohne Cloud-Zwang. So behalten Nutzer Wartungsbudgets, Garantiebedingungen und gesetzliche Fristen im Blick, können Entscheidungen rund um Reparaturen fundierter treffen und die Dokumentation bei Fahrzeugverkauf transparent weitergeben. Diese README hilft dir (oder einem zukünftigen Codex-Agenten), schnell einzusteigen, Tests zu starten, neue Features umzusetzen und das Design konsistent zu halten.
 
 ---
 
