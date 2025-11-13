@@ -1,0 +1,1844 @@
+/* @file styles.css - Globale Layout- und Komponenten-Styles der Logorama-PWA. */
+/* ========================================================================== */
+/*  Abschnitt: Globale Theme-Grundlage                                        */
+/*  Zweck: Import der Fonts sowie Definition aller CSS Custom Properties.     */
+/* ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  color-scheme: dark;
+  --color-surface: #030814;
+  --color-panel: #06102b;
+  --color-panel-muted: #091a33;
+  --color-border: rgba(37, 81, 187, 0.3);
+  --color-border-strong: rgba(37, 81, 187, 0.45);
+  --color-muted: #94a3b8;
+  --color-emphasis: #f8fafc;
+  --color-accent: #f97316;
+  --color-primary-text: #f8fafc;
+  --color-accent-soft: rgba(249, 115, 22, 0.18);
+  --color-accent-hover: #f55d00;
+  --color-danger: #fb7185;
+  --shadow-soft: 0 26px 60px rgba(0, 0, 0, 0.55);
+  --shadow-panel: 0 20px 50px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 28px 60px rgba(0, 0, 0, 0.55);
+  --mobile-nav-height: 84px;
+  --color-hero-bg: linear-gradient(135deg, rgba(249, 115, 22, 0.25), rgba(1, 5, 15, 0.95));
+  --color-hero-border: rgba(249, 115, 22, 0.5);
+  --color-hero-eyebrow: rgba(248, 250, 252, 0.7);
+  --color-hero-lead: rgba(248, 250, 252, 0.85);
+  --color-metrics-bg: rgba(4, 7, 16, 0.85);
+  --color-metrics-border: rgba(249, 115, 22, 0.45);
+  --color-metrics-shadow: inset 0 1px 0 rgba(248, 250, 252, 0.2);
+  --color-label-strong: rgba(248, 250, 252, 0.92);
+  --color-input-bg: rgba(255, 255, 255, 0.04);
+  --color-input-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.6);
+  --color-input-focus-border: rgba(249, 115, 22, 0.45);
+  --color-input-focus-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+  --color-secondary-bg: rgba(249, 115, 22, 0.12);
+  --color-secondary-bg-hover: rgba(249, 115, 22, 0.2);
+  --color-secondary-border: rgba(249, 115, 22, 0.35);
+  --color-ghost-border: rgba(248, 250, 252, 0.1);
+  --color-ghost-border-hover: rgba(249, 115, 22, 0.2);
+  --color-ghost-bg: transparent;
+  --color-ghost-bg-hover: rgba(248, 250, 252, 0.08);
+  --color-danger-bg: rgba(251, 113, 133, 0.12);
+  --color-danger-bg-hover: rgba(251, 113, 133, 0.2);
+  --color-danger-border: rgba(251, 113, 133, 0.35);
+  --color-log-entry-bg: linear-gradient(160deg, rgba(8, 12, 24, 0.95), rgba(14, 28, 54, 0.9));
+  --color-log-entry-border: rgba(249, 115, 22, 0.3);
+  --color-avatar-border: rgba(249, 115, 22, 0.35);
+  --color-avatar-bg: rgba(249, 115, 22, 0.18);
+  --color-paragraph: rgba(248, 250, 252, 0.85);
+  --color-paragraph-soft: rgba(148, 163, 255, 0.75);
+  --color-panel-empty-border: rgba(249, 115, 22, 0.35);
+  --color-panel-empty-bg: rgba(7, 12, 24, 0.65);
+  --color-panel-accent-bg: linear-gradient(180deg, rgba(7, 12, 24, 0.95), rgba(3, 6, 15, 0.95));
+  --color-footer-bg: linear-gradient(180deg, rgba(3, 6, 14, 0.92), rgba(1, 3, 8, 0.95));
+  --color-footer-border: rgba(249, 115, 22, 0.45);
+  --color-mobile-nav-bg: rgba(3, 6, 15, 0.95);
+  --color-mobile-nav-border: rgba(249, 115, 22, 0.35);
+  --color-mobile-nav-icon-bg: rgba(249, 115, 22, 0.2);
+  --color-mobile-nav-highlight: inset 0 1px 0 rgba(248, 250, 252, 0.4);
+  --footer-height: 58px;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  background-color: var(--color-surface);
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Abschnitt: Dark-Theme Variablen                                           */
+/*  Zweck: Ueberschreibt Variablen fuer den dunklen Anzeigemodus.             */
+/* -------------------------------------------------------------------------- */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-surface: #0b1120;
+  --color-panel: #111a2e;
+  --color-panel-muted: #16223a;
+  --color-border: rgba(148, 161, 255, 0.18);
+  --color-border-strong: rgba(148, 161, 255, 0.35);
+  --color-muted: #94a3b8;
+  --color-emphasis: #e2e8f0;
+  --color-accent: #94a1ff;
+  --color-primary-text: #0b1120;
+  --color-accent-soft: rgba(148, 161, 255, 0.24);
+  --color-accent-hover: #8895ff;
+  --color-danger: #ff6b9c;
+  --shadow-soft: 0 26px 60px rgba(5, 11, 26, 0.55);
+  --shadow-panel: 0 20px 48px rgba(2, 8, 20, 0.5);
+  --shadow-hover: 0 24px 56px rgba(12, 22, 44, 0.55);
+  --color-hero-bg: linear-gradient(135deg, rgba(249, 115, 22, 0.25), rgba(3, 7, 20, 0.95));
+  --color-hero-border: rgba(249, 115, 22, 0.45);
+  --color-hero-eyebrow: rgba(249, 115, 22, 0.72);
+  --color-hero-lead: rgba(248, 250, 252, 0.8);
+  --color-metrics-bg: rgba(9, 15, 29, 0.88);
+  --color-metrics-border: rgba(249, 115, 22, 0.45);
+  --color-metrics-shadow: inset 0 1px 0 rgba(148, 161, 255, 0.08);
+  --color-label-strong: rgba(226, 232, 240, 0.92);
+  --color-input-bg: rgba(18, 29, 52, 0.92);
+  --color-input-shadow: inset 0 1px 2px rgba(2, 8, 20, 0.6);
+  --color-input-focus-border: rgba(148, 161, 255, 0.55);
+  --color-input-focus-shadow: 0 0 0 3px rgba(148, 161, 255, 0.18);
+  --color-secondary-bg: rgba(148, 161, 255, 0.16);
+  --color-secondary-bg-hover: rgba(148, 161, 255, 0.24);
+  --color-secondary-border: rgba(148, 161, 255, 0.28);
+  --color-ghost-border: rgba(148, 161, 255, 0.22);
+  --color-ghost-border-hover: rgba(148, 161, 255, 0.4);
+  --color-ghost-bg: rgba(255, 255, 255, 0.02);
+  --color-ghost-bg-hover: rgba(148, 161, 255, 0.1);
+  --color-danger-bg: rgba(255, 107, 156, 0.12);
+  --color-danger-bg-hover: rgba(255, 107, 156, 0.2);
+  --color-danger-border: rgba(255, 107, 156, 0.35);
+  --color-log-entry-bg: linear-gradient(145deg, rgba(24, 35, 58, 0.98), rgba(17, 28, 48, 0.92));
+  --color-log-entry-border: rgba(148, 161, 255, 0.18);
+  --color-avatar-border: rgba(148, 161, 255, 0.35);
+  --color-avatar-bg: rgba(148, 161, 255, 0.16);
+  --color-paragraph: rgba(226, 232, 240, 0.86);
+  --color-paragraph-soft: rgba(203, 213, 225, 0.78);
+  --color-panel-empty-border: rgba(249, 115, 22, 0.35);
+  --color-panel-empty-bg: rgba(7, 12, 24, 0.65);
+  --color-panel-accent-bg: linear-gradient(180deg, rgba(10, 15, 28, 0.94), rgba(4, 6, 15, 0.95));
+  --color-footer-bg: linear-gradient(180deg, rgba(3, 6, 14, 0.92), rgba(1, 3, 8, 0.95));
+  --color-footer-border: rgba(249, 115, 22, 0.45);
+  --color-mobile-nav-bg: rgba(4, 5, 14, 0.96);
+  --color-mobile-nav-border: rgba(249, 115, 22, 0.35);
+  --color-mobile-nav-icon-bg: rgba(249, 115, 22, 0.2);
+  --color-mobile-nav-highlight: inset 0 1px 0 rgba(148, 161, 255, 0.12);
+  --footer-height: 56px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Abschnitt: Globale Basis-Styles                                           */
+/*  Zweck: Resets, Grundtypografie und globale Element-Defaults.              */
+/* -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-surface);
+  color: var(--color-emphasis);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  color: var(--color-emphasis);
+  line-height: 1.2;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* ========================================================================== */
+/*  Komponente: App Shell Layout                                              */
+/*  Zweck: Aeusserer Container fuer die komplette Anwendung.                  */
+/* ========================================================================== */
+/*  Selektor: main.app-shell                                                   */
+/*  Erklaerung: Zentriert den App-Inhalt und definiert vertikale Abstaende.    */
+main.app-shell {
+  width: min(1160px, calc(100vw - 48px));
+  max-width: 100%;
+  margin: 0 auto;
+  padding: clamp(32px, 6vw, 64px) 0 clamp(92px, 10vw, 140px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 5vw, 48px);
+}
+
+@media (max-width: 600px) {
+  main.app-shell {
+    width: min(1160px, calc(100vw - 28px));
+    padding-top: clamp(24px, 8vw, 40px);
+    gap: clamp(24px, 8vw, 36px);
+  }
+}
+
+@media (max-width: 900px) {
+  /*  Selektor: main.app-shell (mobil)                                         */
+  /*  Erklaerung: Fuegt nach unten mehr Platz fuer die Mobile-Navigation hinzu.*/
+  main.app-shell {
+    padding-bottom: calc(var(--mobile-nav-height) + 48px);
+  }
+
+  /*  Selektor: main.app-shell.app-shell--has-footer                           */
+  /*  Erklaerung: Erweiterter Abstand, wenn gleichzeitig ein Footer eingeblendet ist.*/
+  main.app-shell.app-shell--has-footer {
+    padding-bottom: calc(var(--mobile-nav-height) + var(--footer-height) + 48px);
+  }
+}
+
+/* ========================================================================== */
+/*  Komponente: App Hero                                                      */
+/*  Zweck: Hero-Sektion mit Einleitungstext, KPIs und Handlungsaufforderung.  */
+/* ========================================================================== */
+/*  Klasse: .app-hero                                                          */
+/*  Erklaerung: Setzt die Hero-Sektion als Grid-Karte mit Hintergrund, Padding */
+/*              und Schatten, damit der erste Eindruck der App hervortritt.    */
+.app-hero {
+  display: grid;
+  gap: clamp(24px, 4vw, 32px);
+  padding: clamp(32px, 5vw, 48px);
+  border-radius: 32px;
+  background: var(--color-hero-bg);
+  border: 1px solid var(--color-hero-border);
+  box-shadow: var(--shadow-soft);
+}
+
+@media (min-width: 900px) {
+  /*  Klasse: .app-hero (Desktop Layout)                                       */
+  /*  Erklaerung: Teilt den Hero ab Tablet aufwaerts in zwei Spalten auf, damit */
+  /*              Text und KPIs nebeneinander stehen koennen.                  */
+  .app-hero {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-hero {
+    padding: clamp(22px, 8vw, 36px);
+    border-radius: 24px;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Unterelemente: App Hero                                                   */
+/*  Zweck: Inhalte, Call-to-Actions und KPI-Liste innerhalb des Hero-Blocks.  */
+/* -------------------------------------------------------------------------- */
+/*  Klasse: .app-hero__content                                                 */
+/*  Erklaerung: Ordnet Ueberschrift, Beschreibung und Buttons vertikal an.     */
+.app-hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/*  Klasse: .app-hero__eyebrow                                                 */
+/*  Erklaerung: Stellt die kleine Einleitungzeile in Grossbuchstaben dar.      */
+.app-hero__eyebrow {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-hero-eyebrow);
+}
+
+/*  Klasse: .app-hero__lead                                                    */
+/*  Erklaerung: Formatiert den Einfuehrungstext und begrenzt die Breite fuer   */
+/*              leserliche Abschnitte.                                         */
+.app-hero__lead {
+  font-size: clamp(1rem, 0.6vw + 1rem, 1.2rem);
+  color: var(--color-hero-lead);
+  max-width: 640px;
+}
+
+/*  Klasse: .app-hero__actions                                                 */
+/*  Erklaerung: Gruppiert Buttons als flexible Zeile mit Zeilenumbruch.        */
+.app-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/*  Klasse: .app-hero__metrics                                                 */
+/*  Erklaerung: Zeigt Kennzahlen als Kachelraster mit Hintergrundkarte an.     */
+.app-hero__metrics {
+  list-style: none;
+  margin: 0;
+  padding: clamp(20px, 3vw, 28px);
+  border-radius: 24px;
+  background: var(--color-metrics-bg);
+  border: 1px solid var(--color-metrics-border);
+  box-shadow: var(--color-metrics-shadow);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 18px;
+}
+
+/*  Klasse: .metric-value                                                      */
+/*  Erklaerung: Hebt Zahlenwerte als groessere farbige Hauptwerte hervor.      */
+.metric-value {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+/*  Klasse: .metric-label                                                      */
+/*  Erklaerung: Beschriftet die Kennzahlen in kleinerer, dezent grauer Schrift.*/
+.metric-label {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+/* ========================================================================== */
+/*  Layout: Dashboard Grid                                                    */
+/*  Zweck: Raster zur Platzierung der Haupt-Panels und Spezialsektionen.      */
+/* ========================================================================== */
+/*  Klasse: .dashboard-grid                                                    */
+/*  Erklaerung: Nutzt CSS Grid, um die Panels im Hauptbereich mit Abstaenden   */
+/*              zu organisieren.                                              */
+.dashboard-grid {
+  display: grid;
+  gap: clamp(22px, 4vw, 32px);
+}
+
+@media (min-width: 1080px) {
+  /*  Klasse: .dashboard-grid (Wide Layout)                                     */
+  /*  Erklaerung: Verteilt die Panels in zwei Spalten und steuert Sonderfaelle. */
+  .dashboard-grid {
+    grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
+    align-items: start;
+  }
+
+  /*  Selektor: .dashboard-grid > .panel:nth-child(1)                           */
+  /*  Erklaerung: Laesst das erste Panel ueber die gesamte Breite laufen.       */
+  .dashboard-grid > .panel:nth-child(1) {
+    grid-column: 1 / -1;
+  }
+
+  /*  Selektor: .dashboard-grid > .panel:nth-child(2)                           */
+  /*  Erklaerung: Pinnt das zweite Panel in die erste Spalte ueber zwei Zeilen. */
+  .dashboard-grid > .panel:nth-child(2) {
+    grid-column: 1 / 2;
+    grid-row: span 2;
+  }
+
+  /*  Klasse: .trash-panel innerhalb des Grids                                  */
+  /*  Erklaerung: Positioniert den Papierkorb rechts neben dem Hauptstream.     */
+  .dashboard-grid > .trash-panel {
+    grid-column: 2 / 3;
+  }
+
+  /*  Klasse: .data-safety-panel innerhalb des Grids                            */
+  /*  Erklaerung: Platziert die Datensicherheitskarte ebenfalls rechts.         */
+  .dashboard-grid > .data-safety-panel {
+    grid-column: 2 / 3;
+  }
+}
+
+/* ========================================================================== */
+/*  Komponente: Panel                                                         */
+/*  Zweck: Generischer Karten-Container fuer einzelne Funktionsbereiche.      */
+/* ========================================================================== */
+/*  Klasse: .panel                                                             */
+/*  Erklaerung: Basiskarte mit Hintergrund, Padding und Schatten fuer Inhalte. */
+.panel {
+  border-radius: 26px;
+  padding: clamp(24px, 3vw, 32px);
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-panel);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 3vw, 24px);
+}
+
+@media (max-width: 600px) {
+  .panel {
+    padding: clamp(20px, 6vw, 28px);
+    border-radius: 22px;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Unterelemente: Panel                                                      */
+/*  Zweck: Kopfzeile, Untertitel und Leerzustand von Panels.                  */
+/* -------------------------------------------------------------------------- */
+/*  Klasse: .panel-heading                                                     */
+/*  Erklaerung: Stapelt Titel und Untertitel eines Panels mit kleinem Abstand. */
+.panel-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/*  Klasse: .panel-title                                                       */
+/*  Erklaerung: Steuert Typografie des Panel-Haupttitels.                      */
+.panel-title {
+  font-size: clamp(1.1rem, 2.4vw, 1.35rem);
+  margin: 0;
+}
+
+/*  Klasse: .panel-subtitle                                                    */
+/*  Erklaerung: Zeigt eine optionale Erklaerung unter dem Titel in Grau.       */
+.panel-subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+/*  Klasse: .panel-empty                                                       */
+/*  Erklaerung: Visualisiert einen Leerzustand mit gestricheltem Rahmen.       */
+.panel-empty {
+  padding: 28px;
+  border-radius: 20px;
+  border: 1px dashed var(--color-panel-empty-border);
+  background: var(--color-panel-empty-bg);
+  text-align: center;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Spezialisierung: Akzentuierte Panels                                      */
+/*  Zweck: Panels mit hervorgehobener Flaeche (Papierkorb, Datensicherheit).  */
+/* -------------------------------------------------------------------------- */
+/*  Klassen: .trash-panel, .data-safety-panel                                  */
+/*  Erklaerung: Uebernehmen denselben weichen Verlauf wie Highlight-Karten.    */
+.trash-panel,
+.data-safety-panel {
+  background: var(--color-panel-accent-bg);
+}
+
+/* ========================================================================== */
+/*  Komponente: Log Formular                                                  */
+/*  Zweck: Eingabeoberflaechen fuer neue Log-Eintraege.                       */
+/* ========================================================================== */
+/*  Klasse: .log-form                                                          */
+/*  Erklaerung: Arrangiert Formularfelder und Abstaende in einer Spalte.       */
+.log-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/*  Selektor: .log-form label                                                  */
+/*  Erklaerung: Formatiert alle Label mit Spaltenlayout und deutlicher Schrift.*/
+.log-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--color-label-strong);
+  font-size: 0.9rem;
+}
+
+/*  Selektorengruppe: Formular-Eingaben                                        */
+/*  Erklaerung: Vereinheitlicht Inputs sowie Filter-Felder mit gleichen Rahmen.*/
+.log-form input,
+.log-form textarea,
+.filter-toolbar input,
+.filter-toolbar__select {
+  border-radius: 14px;
+  border: 1px solid var(--color-border-strong);
+  padding: 12px 16px;
+  background: var(--color-input-bg);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--color-input-shadow);
+}
+
+/*  Selektorengruppe: Fokuszustand                                             */
+/*  Erklaerung: Betont aktive Eingaben durch prominentere Farbe und Shadow.    */
+.log-form input:focus,
+.log-form textarea:focus,
+.filter-toolbar input:focus,
+.filter-toolbar__select:focus {
+  outline: none;
+  border-color: var(--color-input-focus-border);
+  box-shadow: var(--color-input-focus-shadow);
+}
+
+/*  Selektor: .log-form textarea                                               */
+/*  Erklaerung: Gibt dem Textbereich eine komfortable Mindesthoehe.            */
+.log-form textarea {
+  min-height: 220px;
+  resize: vertical;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Hilfsklasse: Actions                                                      */
+/*  Zweck: Geteilte Button-Gruppe fuer Formulare und Kartenfusszeilen.        */
+/* -------------------------------------------------------------------------- */
+/*  Klasse: .actions                                                           */
+/*  Erklaerung: Verwendet Flex-Layout, damit mehrere Buttons sauber umbrechen. */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.data-safety-panel__hint {
+  margin: 20px 0 0;
+  font-size: 0.95rem;
+  color: var(--color-label-strong);
+  line-height: 1.5;
+}
+
+/* ========================================================================== */
+/*  Komponente: Filter Toolbar                                                */
+/*  Zweck: Filter- und Suchleiste fuer Log-Eintraege.                         */
+/* ========================================================================== */
+/*  Klasse: .filter-toolbar                                                    */
+/*  Erklaerung: Ordnet Filterelemente nebeneinander an und richtet sie aus.    */
+.filter-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+/*  Selektor: .filter-toolbar input                                            */
+/*  Erklaerung: Laesst die Eingabe zur Breite wachsen, damit sie den Platz nutzt.*/
+.filter-toolbar input {
+  flex: 1 1 220px;
+}
+
+/*  Klasse: .filter-toolbar__select                                            */
+/*  Erklaerung: Setzt feste Breite fuer Dropdowns, die bei Bedarf schrumpfen.  */
+.filter-toolbar__select {
+  flex: 0 0 200px;
+}
+
+@media (max-width: 600px) {
+  /*  Klasse: .filter-toolbar__select (Mobil)                                   */
+  /*  Erklaerung: Lässt Select auf kleineren Bildschirmen auf volle Breite ziehen.*/
+  .filter-toolbar__select {
+    flex: 1 1 160px;
+  }
+}
+
+/* ========================================================================== */
+/*  Komponenten: Button-Varianten                                             */
+/*  Zweck: Einheitliche Buttons fuer Primaer-, Sekundaer-, Ghost- und Danger. */
+/* ========================================================================== */
+/*  Selektorengruppe: Buttons                                                  */
+/*  Erklaerung: Setzt allgemeine Form, Gewichtung und Animation fuer Buttons.  */
+.primary,
+.secondary,
+.ghost,
+.danger {
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.26rem 0.4rem;
+  font-size: 0.65rem;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease,
+    color 0.22s ease, border-color 0.22s ease;
+}
+
+.button-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-icon svg {
+  display: block;
+}
+
+.button-label {
+  white-space: nowrap;
+}
+
+/*  Klasse: .primary                                                           */
+/*  Erklaerung: Primaerknopf in Markenfarbe mit kontrastierendem Text und Schatten. */
+.primary {
+  background: var(--color-accent);
+  color: var(--color-primary-text);
+  box-shadow: var(--shadow-panel);
+}
+
+/*  Zustand: .primary:hover                                                    */
+/*  Erklaerung: Hebt den Button leicht an und intensiviert die Farbe.          */
+.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  background: var(--color-accent-hover);
+  color: var(--color-primary-text);
+}
+
+/*  Zustand: .primary:disabled                                                 */
+/*  Erklaerung: Entschaerft inaktiven Button und entfernt Interaktionseffekte. */
+.primary:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+  box-shadow: none;
+}
+
+/*  Klasse: .secondary                                                         */
+/*  Erklaerung: Alternative Button-Variante mit nur leichtem farbigen Akzent.  */
+.secondary {
+  background: var(--color-secondary-bg);
+  color: var(--color-accent);
+  border: 1px solid var(--color-secondary-border);
+}
+
+/*  Zustand: .secondary:hover                                                  */
+/*  Erklaerung: Verleiht der Sekundaer-Variante bei Hover mehr Tiefe.          */
+.secondary:hover {
+  transform: translateY(-2px);
+  background: var(--color-secondary-bg-hover);
+  box-shadow: var(--shadow-panel);
+}
+
+/*  Klasse: .ghost                                                             */
+/*  Erklaerung: Transparenter Button mit Rahmen fuer weniger dominante Aktionen.*/
+.ghost {
+  background: var(--color-ghost-bg);
+  color: var(--color-emphasis);
+  border: 1px solid var(--color-ghost-border);
+}
+
+/*  Zustand: .ghost:hover                                                      */
+/*  Erklaerung: Farbwechsel und Schatten, damit der Button bei Hover reagiert. */
+.ghost:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-ghost-border-hover);
+  color: var(--color-accent);
+  box-shadow: var(--shadow-panel);
+  background: var(--color-ghost-bg-hover);
+}
+
+/*  Klasse: .danger                                                            */
+/*  Erklaerung: Warnknopf fuer gefaehrliche Aktionen mit roten Toenen.         */
+.danger {
+  background: var(--color-danger-bg);
+  color: #c42245;
+  border: 1px solid var(--color-danger-border);
+}
+
+/*  Zustand: .danger:hover                                                     */
+/*  Erklaerung: Signalisiert Interaktion durch kraeftigeren roten Hintergrund. */
+.danger:hover {
+  transform: translateY(-2px);
+  background: var(--color-danger-bg-hover);
+  box-shadow: var(--shadow-panel);
+}
+
+/* ========================================================================== */
+/*  Komponente: Log Liste                                                     */
+/*  Zweck: Darstellung einzelner Log-Eintraege inklusive Editor.             */
+/* ========================================================================== */
+/*  Klasse: .log-list                                                          */
+/*  Erklaerung: Ordnet mehrere Log-Eintragskarten mit vertikalem Abstand.      */
+.log-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Unterelemente: Log Entry                                                  */
+/*  Zweck: Struktur und Interaktion eines einzelnen Log-Eintrags.             */
+/* -------------------------------------------------------------------------- */
+/*  Klasse: .log-entry                                                         */
+/*  Erklaerung: Karte fuer einen einzelnen Eintrag mit Schatten und Hover-Effekt.*/
+.log-entry {
+  border-radius: 24px;
+  padding: 22px clamp(18px, 2vw, 26px);
+  background: var(--color-log-entry-bg);
+  border: 1px solid var(--color-log-entry-border);
+  box-shadow: var(--shadow-panel);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/*  Zustand: .log-entry:hover                                                  */
+/*  Erklaerung: Laesst Karten leicht schweben, um Interaktivitaet zu zeigen.   */
+.log-entry:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+/*  Klasse: .log-entry__header                                                 */
+/*  Erklaerung: Richtet Avatar, Titel und Metainformationen nebeneinander aus. */
+.log-entry__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/*  Klasse: .log-entry__title-group                                            */
+/*  Erklaerung: Hält Avatar und Titel zusammen und ermoeglicht Ellipsen.       */
+.log-entry__title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+/*  Klasse: .log-entry__avatar                                                 */
+/*  Erklaerung: Kleine runde Initiale, die den Autor repraesentiert.           */
+.log-entry__avatar {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--color-avatar-border);
+  background: var(--color-avatar-bg);
+  font-weight: 600;
+  font-size: 0.55rem;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/*  Klasse: .log-entry__title                                                  */
+/*  Erklaerung: Zeigt den Titel und sorgt fuer Textkuerzung bei langen Namen.  */
+.log-entry__title {
+  font-size: 1.1rem;
+  color: var(--color-emphasis);
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: min(380px, 100%);
+}
+
+/*  Klasse: .log-entry__title-input                                            */
+/*  Erklaerung: Eingabefeld fuer Titel im Editiermodus mit staerkerem Rahmen.  */
+.log-entry__title-input {
+  flex: 1;
+  min-width: 0;
+  border-radius: 12px;
+  border: 1px solid var(--color-border-strong);
+  padding: 10px 14px;
+  background: var(--color-input-bg);
+  font-weight: 600;
+}
+
+/*  Zustand: .log-entry__title-input:focus                                     */
+/*  Erklaerung: Markiert den aktiven Input mit farbiger Umrandung.             */
+.log-entry__title-input:focus {
+  outline: none;
+  border-color: var(--color-input-focus-border);
+  box-shadow: var(--color-input-focus-shadow);
+}
+
+/*  Klasse: .log-entry__meta                                                   */
+/*  Erklaerung: Zeigt Datum oder andere Metaangaben in kleiner Schrift.        */
+.log-entry__meta {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+/*  Klasse: .log-entry__editor                                                 */
+/*  Erklaerung: Textarea fuer Vollinhalte mit komfortablem Padding.            */
+.log-entry__editor {
+  width: 100%;
+  min-height: 220px;
+  border-radius: 16px;
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-input-bg);
+  padding: 14px 18px;
+  resize: vertical;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/*  Zustand: .log-entry__editor:focus                                          */
+/*  Erklaerung: Betont den Editor beim Schreiben mit Fokusrahmen.              */
+.log-entry__editor:focus {
+  outline: none;
+  border-color: var(--color-input-focus-border);
+  box-shadow: var(--color-input-focus-shadow);
+}
+
+/*  Klasse: .log-entry__content                                                */
+/*  Erklaerung: Statischer Anzeige-Text mit weichem Zeilenabstand.             */
+.log-entry__content {
+  margin: 0;
+  color: var(--color-paragraph);
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/*  Klasse: .log-entry__footer                                                 */
+/*  Erklaerung: Platz fuer Bottom-Actions wie Buttons in der Karte.            */
+.log-entry__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+/* ========================================================================== */
+/*  Komponente: Papierkorb                                                    */
+/*  Zweck: Verwaltung geloeschter Eintraege inklusive Aktionen.               */
+/* ========================================================================== */
+/*  Klasse: .trash-list                                                        */
+/*  Erklaerung: Stapelt geloeschte Eintraege vertikal mit gleichmaessigem Abstand.*/
+.trash-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Unterelemente: Papierkorb Eintrag                                         */
+/*  Zweck: Darstellung einzelner geloeschter Eintraege inkl. Aktionen.        */
+/* -------------------------------------------------------------------------- */
+/*  Klasse: .trash-entry                                                       */
+/*  Erklaerung: Einzelne geloeschte Karte mit Hintergrund und Animation.      */
+.trash-entry {
+  border-radius: 20px;
+  border: 1px solid var(--color-log-entry-border);
+  background: var(--color-panel-empty-bg);
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.trash-entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+/*  Klasse: .trash-entry-head                                                  */
+/*  Erklaerung: Positioniert Kopfzeile und Aktionsbereich nebeneinander.       */
+.trash-entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+/*  Klasse: .trash-title-group                                                 */
+/*  Erklaerung: Gruppiert Titeltext und Metainformation im Kopfbereich.        */
+.trash-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/*  Selektor: .trash-title-group strong                                        */
+/*  Erklaerung: Betont den Namen des geloeschten Eintrags.                     */
+.trash-title-group strong {
+  font-size: 1rem;
+  color: var(--color-emphasis);
+}
+
+/*  Klasse: .trash-meta                                                        */
+/*  Erklaerung: Zeigt Zusatzinformationen wie Datum in kleiner Schrift.        */
+.trash-meta {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+/*  Klasse: .trash-entry-content                                               */
+/*  Erklaerung: Darstellung des geloeschten Inhalts mit Zeilenumbruch.         */
+.trash-entry-content {
+  margin: 0;
+  color: var(--color-paragraph);
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/*  Klasse: .trash-entry-actions                                               */
+/*  Erklaerung: Ordnet Wiederherstellen- oder Loeschen-Buttons am Kartenende.  */
+.trash-entry-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+/*  Klasse: .trash-clear                                                       */
+/*  Erklaerung: Fuegt Abstand oberhalb des Buttons zum Leeren des Papierkorbs ein.*/
+.trash-clear {
+  margin-top: 18px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Detailstil: Datensicherheits-Panel                                        */
+/*  Zweck: Textgestaltung innerhalb der Datensicherheits-Hinweise.           */
+/* -------------------------------------------------------------------------- */
+/*  Selektor: .data-safety-panel p                                             */
+/*  Erklaerung: Macht Hinweistext angenehm lesbar und leicht abgesetzt.        */
+.data-safety-panel p {
+  color: var(--color-paragraph-soft);
+  line-height: 1.6;
+}
+
+/* ========================================================================== */
+/*  Komponente: Hilfe / Onboarding                                            */
+/*  Zweck: Beschreibende Hilfetexte und Listen.                               */
+/* ========================================================================== */
+/*  Klasse: .help-content                                                      */
+/*  Erklaerung: Ordnet alle Hilfeabschnitte und Textblöcke untereinander an.  */
+/*  Klasse: .help-panel                                                        */
+/*  Erklaerung: Fuegt vertikale Abstaende zwischen In-App-Hilfeabschnitten ein.*/
+.help-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/*  Klasse: .help-content__toc                                                 */
+/*  Erklaerung: Stilisierter Inhaltsindex fuer Sprunglinks.                   */
+.help-content__toc {
+  background: var(--color-panel-accent-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/*  Selektor: .help-content__toc-title                                        */
+/*  Erklaerung: Betont Ueberschrift des Inhaltsverzeichnisses.                */
+.help-content__toc-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-emphasis);
+}
+
+/*  Selektor: .help-content__toc ul                                           */
+/*  Erklaerung: Macht Sprunglinks angenehm lesbar.                            */
+.help-content__toc ul {
+  margin: 0;
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/*  Klasse: .help-content__toc-button                                       */
+/*  Erklaerung: Button-Styles fuer die Inline-Navigation.                   */
+.help-content__toc-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  padding: 4px 0;
+  color: var(--color-accent);
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.help-content__toc-button:hover,
+.help-content__toc-button:focus-visible {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+/*  Klasse: .help-content__figure                                             */
+/*  Erklaerung: Gruppiert Screenshots/Diagramme mit Bildunterschriften.       */
+.help-content__figure {
+  margin: 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/*  Klasse: .help-content__figure-placeholder                                 */
+/*  Erklaerung: Platzhalter fuer zukuenftige Assets.                          */
+.help-content__figure-placeholder {
+  background: var(--color-panel-muted);
+  border: 1px dashed var(--color-border);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+/*  Klasse: .help-content__image                                              */
+/*  Erklaerung: Stellt eingebettete Screenshots responsiv und sauber dar.     */
+.help-content__image {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 8px 24px rgba(8, 12, 30, 0.4);
+}
+
+/*  Klasse: .help-content__figure-grid                                        */
+/*  Erklaerung: Platziert mehrere Screenshots nebeneinander (mobile gestapelt).*/
+.help-content__figure-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.help-content__figure-grid .help-content__image {
+  flex: 1 1 240px;
+  min-width: 220px;
+}
+
+/*  Klasse: .help-content__footer                                             */
+/*  Erklaerung: Hinweisbereich mit Verweisen auf Dokumentation.               */
+.help-content__footer {
+  margin-top: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-paragraph-soft);
+  line-height: 1.6;
+}
+
+.help-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: var(--color-paragraph);
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Unterelemente: Hilfe / Onboarding                                         */
+/*  Zweck: Listen und Zwischenueberschriften im Hilfebereich.                 */
+/* -------------------------------------------------------------------------- */
+/*  Selektor: .help-content ul                                                 */
+/*  Erklaerung: Stellt Aufzaehlungen kompakt dar und fuegt Innenabstand hinzu. */
+.help-content ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/*  Selektor: .help-content h3                                                 */
+/*  Erklaerung: Formatiert Unterueberschriften der Hilfetexte.                 */
+.help-content h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-emphasis);
+}
+
+/* ========================================================================== */
+/*  Komponente: Footer                                                        */
+/*  Zweck: Abschlussbereich mit Meta-Informationen und Links.                 */
+/* ========================================================================== */
+/*  Klasse: .app-footer                                                        */
+/*  Erklaerung: Gestaltet den unteren Seitenabschluss mit Rahmen und Hintergrund.*/
+.app-footer {
+  min-height: var(--footer-height);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-footer-bg);
+  border-top: 1px solid var(--color-footer-border);
+}
+
+/*  Klasse: .app-footer__spacer                                                */
+/*  Erklaerung: Reserviert Platz, damit die Mobile-Navigation nichts verdeckt. */
+.app-footer__spacer {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  /* ------------------------------------------------------------------------ */
+  /*  Responsive: Footer Abstand                                              */
+  /*  Zweck: Reserve fuer Mobile Navigation und Safe-Area Insets.             */
+  /* ------------------------------------------------------------------------ */
+  .app-footer__spacer {
+    display: block;
+    height: calc(var(--mobile-nav-height) + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/*  Klasse: .app-footer__inner                                                 */
+/*  Erklaerung: Zentriert den Inhalt des Footers und richtet Text aus.         */
+.app-footer__inner {
+  width: min(960px, calc(100vw - 48px));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  padding: 10px 0;
+}
+
+/*  Selektor: .app-footer__inner a                                             */
+/*  Erklaerung: Betont Footer-Links mit etwas staerkerer Schrift.              */
+.app-footer__inner a {
+  font-weight: 600;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Accessibility Hilfen                                                      */
+/*  Zweck: Unsichtbare Sprungmarken und Screenreader-Klassen.                 */
+/* -------------------------------------------------------------------------- */
+/*  Klasse: .sr-anchor                                                         */
+/*  Erklaerung: Unsichtbare Anker, die Spruenge fuer Screenreader ermoeglichen.*/
+.sr-anchor {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 0;
+}
+
+/*  Klasse: .visually-hidden                                                   */
+/*  Erklaerung: Versteckt Elemente visuell, laesst sie aber fuer Screenreader bestehen.*/
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ========================================================================== */
+/*  Komponente: Navigation mobil                                              */
+/*  Zweck: Feste Navigationsleiste fuer kleine Viewports.                     */
+/* ========================================================================== */
+/*  Klasse: .mobile-nav                                                        */
+/*  Erklaerung: Fixierte Navigationsleiste am unteren Rand fuer Smartphones.   */
+.mobile-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  border-top: 1px solid var(--color-mobile-nav-border);
+  background: var(--color-mobile-nav-bg);
+  backdrop-filter: blur(18px);
+  padding: 6px calc(clamp(10px, 4vw, 20px) + env(safe-area-inset-right, 0px))
+    calc(12px + env(safe-area-inset-bottom, 0px))
+    calc(clamp(10px, 4vw, 20px) + env(safe-area-inset-left, 0px));
+  display: none;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* ========================================================================== */
+/*  Komponente: Navigation desktop                                            */
+/*  Zweck: Sticky Navigationsleiste fuer groessere Viewports.                 */
+/* ========================================================================== */
+/*  Klasse: .desktop-nav                                                       */
+/*  Erklaerung: Standardmaessig ausgeblendet, da nur auf groesseren Displays aktiv.*/
+.desktop-nav {
+  display: none;
+}
+
+@media (min-width: 901px) {
+  /* Desktop: 60 % größere Buttons für mehr visuelle Präsenz */
+  .primary,
+  .secondary,
+  .ghost,
+  .danger {
+    font-size: 1.04rem;
+    padding: 0.42rem 0.64rem;
+  }
+
+  /* ------------------------------------------------------------------------ */
+  /*  Unterelemente: Desktop Navigation                                       */
+  /*  Zweck: Navigationseintraege, Badges und Icons fuer groessere Screens.   */
+  /* ------------------------------------------------------------------------ */
+  /*  Klasse: .desktop-nav (breite Screens)                                     */
+  /*  Erklaerung: Macht die Sticky Navigation sichtbar und verleiht Kartenstil.*/
+  .desktop-nav {
+    display: block;
+    position: sticky;
+    top: clamp(16px, 4vw, 32px);
+    z-index: 55;
+    padding: clamp(16px, 3vw, 22px) clamp(20px, 3vw, 28px);
+    border-radius: 28px;
+    background: var(--color-panel);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-panel);
+  }
+
+  /*  Klasse: .desktop-nav__list                                                */
+  /*  Erklaerung: Richtet Navigationspunkte in einer Reihe mit Abstaenden aus.  */
+  .desktop-nav__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /*  Klasse: .desktop-nav__item                                                */
+  /*  Erklaerung: Erweiterbares Flex-Item fuer jeden Navigationspunkt.          */
+  .desktop-nav__item {
+    flex: 1;
+    display: flex;
+  }
+
+  /*  Klasse: .desktop-nav__link                                                */
+  /*  Erklaerung: Klickbare Flaeche mit Icon und Titel pro Navigationspunkt.    */
+  .desktop-nav__link {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--color-muted);
+    padding: 12px 16px;
+    border-radius: 16px;
+    text-decoration: none;
+    transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  }
+
+  /*  Zustand: .desktop-nav__link:hover                                         */
+  /*  Erklaerung: Hebt Auswahl bei Hover durch Farbe und leichte Bewegung hervor.*/
+  .desktop-nav__link:hover {
+    color: var(--color-accent);
+    background: var(--color-secondary-bg);
+    transform: translateY(-2px);
+  }
+
+  /*  Zustand: .desktop-nav__link--active                                       */
+  /*  Erklaerung: Markiert den aktiven Navigationspunkt persistent.             */
+  .desktop-nav__link--active {
+    color: var(--color-accent);
+    background: var(--color-secondary-bg);
+    box-shadow: var(--color-mobile-nav-highlight);
+  }
+
+  /*  Klasse: .desktop-nav__icon                                                */
+  /*  Erklaerung: Container fuer das jeweilige Navigationssymbol.               */
+  .desktop-nav__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    color: var(--color-accent);
+  }
+
+  /*  Klasse: .desktop-nav__badge                                               */
+  /*  Erklaerung: Zeigt Benachrichtigungszahlen als kleine Chips neben Links.   */
+  .desktop-nav__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    padding: 0 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 999px;
+    background: var(--color-secondary-bg);
+    color: var(--color-accent);
+  }
+}
+
+@media (max-width: 900px) {
+  /* ------------------------------------------------------------------------ */
+  /*  Responsive: Mobile Navigation Aktivierung                               */
+  /*  Zweck: Navigation bei kleinen Viewports sichtbar schalten.              */
+  /* ------------------------------------------------------------------------ */
+  /*  Klasse: .mobile-nav (mobil sichtbar)                                     */
+  /*  Erklaerung: Aktiviert die Navigationsleiste, sobald der Bildschirm klein ist.*/
+  .mobile-nav {
+    display: flex;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Unterelemente: Mobile Navigation                                          */
+/*  Zweck: Struktur und Interaktion der mobilen Navigationspunkte.            */
+/* -------------------------------------------------------------------------- */
+/*  Klasse: .mobile-nav__list                                                  */
+/*  Erklaerung: Verteilt Navigationspunkte gleichmaessig auf der Leiste.       */
+.mobile-nav__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(8px, 3vw, 14px);
+  margin: 0;
+  padding: 0;
+  width: min(520px, 100%);
+  list-style: none;
+  min-height: calc(var(--mobile-nav-height) - env(safe-area-inset-bottom, 0px));
+}
+
+/*  Klasse: .mobile-nav__item                                                  */
+/*  Erklaerung: Flex-Container je Navigationseintrag zur Zentrierung.          */
+.mobile-nav__item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+/*  Klasse: .mobile-nav__link                                                  */
+/*  Erklaerung: Vertikaler Button mit Icon und Label fuer jeden Tab.           */
+.mobile-nav__link {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  padding: 10px 10px;
+  border-radius: 16px;
+  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .mobile-nav__link {
+    padding: 8px 8px;
+  }
+}
+
+/*  Zustand: .mobile-nav__link:hover                                           */
+/*  Erklaerung: Aendert Farbe und verschiebt Link leicht fuer Hover-Feedback. */
+.mobile-nav__link:hover {
+  color: var(--color-accent);
+  background: var(--color-secondary-bg);
+  transform: translateY(-2px);
+}
+
+/*  Zustand: .mobile-nav__link--active                                         */
+/*  Erklaerung: Markiert den gerade aktiven Navigationspunkt.                  */
+.mobile-nav__link--active {
+  color: var(--color-accent);
+  background: var(--color-secondary-bg);
+  box-shadow: var(--color-mobile-nav-highlight);
+}
+
+/*  Klasse: .mobile-nav__icon                                                  */
+/*  Erklaerung: Quadratische Flaeche fuer das Navigation-Symbol.               */
+.mobile-nav__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: var(--color-mobile-nav-icon-bg);
+  color: var(--color-accent);
+}
+
+/*  Zustand: .mobile-nav__link--active .mobile-nav__icon                       */
+/*  Erklaerung: Faerbt das Icon bei Aktivierung passend zum Hauptbutton ein.   */
+.mobile-nav__link--active .mobile-nav__icon {
+  background: var(--color-accent);
+  color: #ffffff;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Interaktion: Mobile Navigation Buttons                                    */
+/*  Zweck: Fokus- und Buttonverhalten fuer mobile Aktionslinks.               */
+/* -------------------------------------------------------------------------- */
+/*  Klasse: .mobile-nav__link--button                                          */
+/*  Erklaerung: Entfernt Standardbutton-Stile fuer Interaktionen innerhalb der Leiste.*/
+.mobile-nav__link--button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+/*  Zustand: .mobile-nav__link--button:focus-visible                           */
+/*  Erklaerung: Zeichnet gut sichtbare Tastatur-Fokusringe.                    */
+.mobile-nav__link--button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/*  Klasse: .mobile-nav__badge                                                 */
+/*  Erklaerung: Kleines Benachrichtigungssignet oben rechts am Navigationspunkt.*/
+.mobile-nav__badge {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  min-width: 18px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-size: 0.65rem;
+  line-height: 1;
+  box-shadow: 0 6px 14px rgba(37, 81, 187, 0.25);
+}
+
+/* ========================================================================== */
+/*  Komponente: Theme Toggle                                                  */
+/*  Zweck: Umschalter zwischen Light- und Dark-Theme.                         */
+/* ========================================================================== */
+/*  Klasse: .theme-toggle                                                      */
+/*  Erklaerung: Inline-flex Container fuer Switch-Element und Textlabel.       */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-inline: 1.2rem;
+}
+
+/*  Klasse: .theme-toggle__icon                                                */
+/*  Erklaerung: Zentriert das Icon, das den aktuellen Modus widerspiegelt.     */
+.theme-toggle__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*  Klasse: .theme-toggle__label                                               */
+/*  Erklaerung: Textbeschreibung des Toggles, etwas hervorgehoben.             */
+.theme-toggle__label {
+  font-weight: 600;
+}
+
+/* ========================================================================== */
+/*  Design System für CarsServiceLog                                             */
+/*  Zweck: Einheitliche Panels, Dashboard-Karten und Buttons definieren.      */
+/* ========================================================================== */
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle at top right, rgba(15, 143, 118, 0.1), transparent 60%),
+    var(--color-surface);
+}
+
+.panel {
+  background: linear-gradient(180deg, rgba(4, 8, 20, 0.98), rgba(1, 3, 8, 0.92));
+  border: 1px solid rgba(249, 115, 22, 0.22);
+  border-radius: 28px;
+  padding: 2.25rem;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.6);
+  margin-bottom: 1.5rem;
+}
+
+.panel-heading {
+  margin-bottom: 1.5rem;
+}
+
+.panel-title {
+  font-size: 1.7rem;
+  margin-bottom: 0.35rem;
+  color: #f8fafc;
+}
+
+.panel-subtitle {
+  color: rgba(248, 250, 252, 0.68);
+  margin: 0;
+}
+
+.dashboard-page__hero {
+  background: var(--color-hero-bg);
+  border: 1px solid var(--color-hero-border);
+  border-radius: 32px;
+  padding: 2.5rem;
+  box-shadow: 0 40px 70px rgba(0, 0, 0, 0.55);
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-page__hero-actions {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.primary {
+  background: linear-gradient(135deg, #0f8f76, #00a585);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.65rem 1.75rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
+}
+
+.ghost {
+  border: 1px solid var(--color-ghost-border);
+  border-radius: 999px;
+  padding: 0.65rem 1.6rem;
+  background: var(--color-ghost-bg);
+  color: var(--color-emphasis);
+  font-weight: 600;
+}
+
+.dashboard-page__vehicle-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-radius: 22px;
+  background: rgba(7, 10, 25, 0.9);
+  border: 1px solid rgba(249, 115, 22, 0.22);
+  transition: border 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-page__vehicle-card:hover {
+  border-color: rgba(249, 115, 22, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.45);
+}
+
+.dashboard-page__vehicle-status span {
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.panel ul li {
+  margin-bottom: 0.4rem;
+}
+
+.modal,
+.vehicle-page__entries,
+.services-page__list {
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.vehicle-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.vehicle-page__hero {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.vehicle-page section {
+  background: linear-gradient(135deg, rgba(15, 143, 118, 0.08), rgba(255, 255, 255, 0.1));
+  border-radius: 28px;
+  border: 1px solid rgba(15, 143, 118, 0.18);
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2);
+}
+
+.vehicle-page__section-header {
+  margin-bottom: 1rem;
+}
+
+.vehicle-page__section-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.vehicle-page__section p {
+  color: var(--color-paragraph-soft);
+  margin: 0 0 1.2rem;
+}
+
+.vehicle-page__detail-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+  color: var(--color-paragraph);
+}
+
+.vehicle-page__detail-row span {
+  flex: 1;
+  min-width: 140px;
+}
+
+.vehicle-page__form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  background: rgba(7, 10, 25, 0.95);
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.65), inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(249, 115, 22, 0.28);
+}
+
+.vehicle-page__form label {
+  display: block;
+  font-weight: 600;
+  color: #f8fafc;
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.vehicle-page__form .field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.vehicle-page__form input,
+.vehicle-page__form select,
+.vehicle-page__form textarea {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  color: #f8fafc;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+  width: 100%;
+  min-width: 200px;
+  letter-spacing: 0.02em;
+}
+
+.vehicle-page__form input:focus,
+.vehicle-page__form select:focus,
+.vehicle-page__form textarea:focus {
+  border-color: rgba(249, 115, 22, 0.45);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+  outline: none;
+}
+
+.vehicle-page__form textarea {
+  min-height: 140px;
+  resize: vertical;
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.08) 75%, transparent 75%, transparent);
+  background-size: 16px 16px;
+}
+
+.new-vehicle-page {
+  padding: 2rem;
+  background: linear-gradient(160deg, rgba(15, 23, 42, 0.9), rgba(3, 7, 15, 0.95));
+  border: 1px solid rgba(249, 115, 22, 0.35);
+  border-radius: 28px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.new-vehicle-page .panel-heading {
+  padding-bottom: 1rem;
+}
+
+.vehicle-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  background: rgba(7, 10, 25, 0.92);
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(249, 115, 22, 0.25);
+  margin-top: 1rem;
+}
+
+.vehicle-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.vehicle-form__field--full {
+  grid-column: 1 / -1;
+}
+
+.vehicle-form__label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(248, 250, 252, 0.92);
+}
+
+.vehicle-form__input {
+  background: rgba(14, 20, 36, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  color: #f8fafc;
+  font-size: 0.95rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vehicle-form__input:focus {
+  border-color: rgba(249, 115, 22, 0.45);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+  outline: none;
+}
+
+.vehicle-form__actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.vehicle-form__submit {
+  border: none;
+  border-radius: 24px;
+  padding: 0.85rem 2rem;
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.95), rgba(251, 180, 88, 0.95));
+  color: #071525;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vehicle-form__submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(249, 115, 22, 0.35);
+}
+
+.services-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.services-page__hero {
+  background: var(--color-hero-bg);
+  border: 1px solid var(--color-hero-border);
+  border-radius: 30px;
+  padding: 2.5rem;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+  margin-bottom: 1rem;
+}
+
+.services-page__custom-range,
+.services-page__filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  background: rgba(7, 10, 25, 0.9);
+  border-radius: 24px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.services-page__filters label,
+.services-page__custom-range label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: rgba(248, 250, 252, 0.85);
+  font-weight: 600;
+}
+
+.services-page__filters select,
+.services-page__custom-range input {
+  background: rgba(14, 20, 36, 0.92);
+  border: 1px solid rgba(249, 115, 22, 0.35);
+  border-radius: 14px;
+  padding: 0.7rem 1rem;
+  color: #f8fafc;
+  font-size: 0.95rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.services-page__filters select:focus,
+.services-page__custom-range input:focus {
+  border-color: rgba(249, 115, 22, 0.55);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.18);
+  outline: none;
+}
+
+.services-page__summary {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background: rgba(7, 10, 25, 0.85);
+  border-radius: 18px;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.services-page__entry {
+  padding: 1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(7, 10, 25, 0.95);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+}
+
+.vehicle-page__form button {
+  grid-column: 1 / -1;
+  width: fit-content;
+  padding: 0.85rem 2rem;
+  border-radius: 20px;
+  border: none;
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.95), rgba(247, 169, 83, 0.95));
+  color: #071525;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  justify-self: start;
+}
+
+.vehicle-page__form button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(249, 115, 22, 0.4);
+}
