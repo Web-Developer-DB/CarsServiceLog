@@ -1,4 +1,4 @@
-# 🌌 CarsServiceLog · Modernes Dev-Handbuch
+# 🌌 CarsServiceLog · Projekt-README
 
 <div align="center" style="padding:1.5rem;border-radius:1rem;background:linear-gradient(135deg,#03050d 0%,#0f172a 60%,#312e81 100%);color:#f8fafc;">
   <p style="font-size:1.15rem;margin:0;">Offline-fähiges Fahrzeug-Cockpit für Familien & Fuhrparks</p>
@@ -42,7 +42,7 @@
 | **Backup** | JSON-Export/-Import mit `schemaVersion`, offline-first persistiert |
 
 🔒 **PWA & Offline**  
-Der `useCarsServiceLogManager` persistiert alle Daten via LocalStorage. Backup/Wiederherstellung funktionieren komplett lokal; so bleiben Wartungsnachweise auch für Fahrzeugverkauf oder Garantie transparent.
+Der `useCarsServiceLogManager` persistiert alle Daten via LocalStorage. Backups und Wiederherstellung funktionieren komplett lokal; so bleiben Wartungsnachweise auch für Fahrzeugverkauf oder Garantie transparent.
 
 ---
 
@@ -69,12 +69,12 @@ npm install         # Dependencies
 npm run dev         # http://localhost:5173
 npm run build       # Prod build -> dist/
 npm run preview     # Preview des Build-Outputs
-npm test            # Jest once
-npm run test:watch  # Watchmode
-npm run test:ci     # + Coverage
+npm test            # Jest einmalig
+npm run test:watch  # Watch-Mode
+npm run test:ci     # CI + Coverage
 ```
 
-> 💡 **Workflow-Tipp:** Vor jedem Commit `npm test`, nach größeren UI-Änderungen `npm run build`, um PWA-Warnings früh zu sehen.
+> 💡 **Workflow-Tipp:** Vor jedem Commit `npm test` laufen lassen und nach größeren UI-Änderungen `npm run build`, um PWA-Warnungen früh zu sehen.
 
 ---
 
@@ -87,6 +87,7 @@ src/
 ├─ constants/                # Kategorien, Intervaltypen
 ├─ hooks/
 │  ├─ useCarsServiceLogManager.js
+│  ├─ useEntriesManager.js
 │  ├─ useInstallPrompt.js
 │  └─ useThemeManager.js
 ├─ pages/                    # Dashboard, Vehicle, Services, Backup, Help
@@ -98,7 +99,7 @@ tests/
 └─ …                         # Spiegeln Seiten/Hooks/Utils
 
 public/
-└─ icons/ · manifest · service-worker.js
+└─ icons/ · images/ · manifest · service-worker.js
 ```
 
 ---
@@ -149,10 +150,10 @@ ServiceInterval {
 
 ## 🧪 TDD & Test-Playbook
 
-1. **Feature definieren** – z. B. Filterlogik, neue Hooks oder UI-Flow.
-2. **Tests zuerst** (Dateien unter `tests/...` spiegeln die Struktur von `src/...`).
-3. **Red → Green → Refactor** mit `npm test -- <file>`.
-4. **Abschluss**: Vollsuite (`npm test`) + optional `npm run build`.
+1. **Feature definieren** – z. B. Filterlogik, neue Hooks oder UI-Flows.
+2. **Tests zuerst schreiben** (Dateien unter `tests/...` spiegeln die Struktur von `src/...`).
+3. **Red → Green → Refactor** fahren und zielgerichtet `npm test -- <file>` laufen lassen.
+4. **Abschluss**: Gesamtsuite (`npm test`) + optional `npm run build`.
 
 | Bereich | Erwartete Tests |
 | --- | --- |
@@ -182,10 +183,10 @@ ServiceInterval {
 
 1. `prompt.md` lesen (Branding, Anforderungen, Testregeln).
 2. Diese README als technische Referenz nutzen.
-3. Vor Änderungen: Statusbericht + `npm test`.
-4. Kommunikation: Kurze Roadmap → Tests → Code → Tests.
-5. Persistenzänderungen mit Beispiel-JSON prüfen (Export + Import).
-6. Neue Erkenntnisse auch in `prompt.md` und im Kapitel **Roadmap & Ideen** ergänzen.
+3. Vor Änderungen Statusbericht posten und `npm test` laufen lassen.
+4. Kommunikation knapp halten: Roadmap → Tests → Code → Tests.
+5. Persistenzänderungen immer mit Beispiel-JSON prüfen (Export + Import).
+6. Neue Erkenntnisse sofort in `prompt.md` sowie im Kapitel **Roadmap & Ideen** notieren.
 
 ---
 
